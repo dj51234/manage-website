@@ -1,0 +1,12 @@
+{
+  "name": "manage-website",
+  "version": "1.0.0",
+  "scripts": {
+    "sass": "node-sass -w styles/scss/ -o styles/css/ --recursive"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.1.4"
+  }
+}

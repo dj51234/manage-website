@@ -1,24 +1,374 @@
+// Typography import
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,400;0,500;0,700;1,400&display=swap");
 
-// colors
-$red: hsl(12, 88%, 59%);
-$pale-red: hsl(13, 100%, 96%);
-$light-red: #fcf6f5;
-$alert-red: #f33c3c;
+// Colors
+$bright-red: hsl(12, 88%, 59%);
 $dark-blue: hsl(228, 39%, 23%);
-$dark-gray-blue: hsl(227, 12%, 61%);
+$gray-blue: hsl(227, 12%, 61%);
 $very-dark-blue: hsl(233, 12%, 13%);
+$pale-red: hsl(13, 100%, 96%);
 $gray: hsl(0, 0%, 98%);
+$light-red: #fcf6f5;
 $white: #fff;
+$alert-red: #f33c3c;
 
-// Weights
+// Font Weights
 $weight-regular: 400;
 $weight-medium: 500;
 $weight-bold: 700;
 
-// helpers
+// Design elements
 $transition: 300ms ease-in-out;
 
+// Reset
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
 body {
-  background: $red;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Be Vietnam", sans-serif;
+  font-size: 1.6rem;
+  background-color: $white;
+  color: $dark-blue;
+}
+
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+// Screen Reader Only
+.sr-only {
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  border: 0;
+}
+
+// Type Specs
+.t-mobile-nav {
+  font-weight: $weight-bold;
+  font-size: 1.6rem;
+  line-height: 2.3rem;
+  letter-spacing: -0.29px;
+  color: $dark-blue;
+}
+
+.t-desk-nav {
+  font-weight: $weight-medium;
+  font-size: 1.3rem;
+  line-height: 1.9rem;
+  color: $dark-blue;
+  letter-spacing: 0px;
+}
+
+.t-h1 {
+  font-size: 4rem;
+  line-height: 5rem;
+  letter-spacing: -1px;
+  font-weight: $weight-bold;
+  color: $dark-blue;
+  @media (min-width: 1000px) {
+    font-size: 5.6rem;
+    line-height: 6.4rem;
+  }
+}
+
+.t-h2 {
+  font-size: 3rem;
+  line-height: 4.5rem;
+  letter-spacing: -0.62px;
+  font-weight: $weight-bold;
+  color: $dark-blue;
+  @media (min-width: 960px) {
+    font-size: 4rem;
+    line-height: 4.4rem;
+    letter-spacing: -0.71px;
+  }
+}
+
+.t-h3 {
+  font-size: 1.6rem;
+  line-height: 2.3rem;
+  letter-spacing: -0.29px;
+  font-weight: $weight-bold;
+}
+
+.t-body1 {
+  font-size: 1.6rem;
+  font-weight: $weight-regular;
+  line-height: 2.8rem;
+  letter-spacing: 0px;
+  color: $dark-blue;
+  opacity: 0.5;
+  @media (min-width: 768px) {
+    line-height: 2.6rem;
+  }
+}
+
+.t-body2 {
+  font-size: 1.4rem;
+  font-weight: $weight-regular;
+  line-height: 2.8rem;
+  letter-spacing: 0px;
+  color: $dark-blue;
+  opacity: 0.5;
+  @media (min-width: 768px) {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+  }
+}
+
+.t-name {
+  font-size: 1.6rem;
+  font-weight: $weight-bold;
+  letter-spacing: -0.29px;
+  line-height: 2.3rem;
+  color: $dark-blue;
+}
+
+.t-cta {
+  font-size: 4rem;
+  line-height: 5rem;
+  letter-spacing: -1px;
+  font-weight: $weight-bold;
+  color: $white;
+  @media (min-width: 768px) {
+    line-height: 4.4rem;
+    letter-spacing: -0.71px;
+  }
+}
+
+.t-footer-menu__item {
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  letter-spacing: -0.23px;
+  font-weight: $weight-regular;
+  color: $white;
+  transition: $transition color;
+  &:hover {
+    color: $bright-red;
+  }
+}
+
+.t-copyright {
+  opacity: 0.5;
+  font-size: 1.3rem;
+  line-height: 1.9rem;
+  letter-spacing: -0.2px;
+  font-weight: $weight-regular;
+  color: $white;
+}
+
+// Buttons
+.button {
+  &--getstart {
+    font-size: 1.3rem;
+    font-weight: $weight-bold;
+    line-height: 1.9rem;
+    letter-spacing: 0px;
+    color: $light-red;
+    background-color: $bright-red;
+    padding: 1.2rem 3.2rem 1.3rem;
+    box-shadow: 0 1.5rem 1.5rem -1rem #ff9f8e;
+    border-radius: 2.2rem;
+    transition: $transition background-color, $transition transform,
+      $transition box-shadow;
+    &:hover {
+      background-color: #f98f75;
+      transform: translateY(-2px);
+      box-shadow: 0 2rem 2rem -1.5rem #ff9f8e;
+    }
+  }
+
+  &--cta {
+    font-size: 1.3rem;
+    font-weight: $weight-bold;
+    line-height: 1.9rem;
+    letter-spacing: 0px;
+    color: $bright-red;
+    background-color: $white;
+    padding: 1.2rem 3.2rem 1.3rem;
+    box-shadow: 0 1.5rem 1.5rem -1rem #db5943;
+    border-radius: 2.2rem;
+    transition: $transition color, $transition transform, $transition box-shadow;
+    &:hover {
+      color: #f9af9d;
+      transform: translateY(-2px);
+      box-shadow: 0 2rem 2rem -1.5rem #db5943;
+    }
+  }
+
+  &--submit {
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    font-weight: $weight-bold;
+    background-color: $bright-red;
+    padding: 1.55rem 0;
+    border-radius: 2.2rem;
+    color: #fcf6f5;
+    letter-spacing: 0px;
+    width: 8rem;
+    min-width: 8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: $transition background-color;
+    &:hover {
+      background-color: #f9af9d;
+    }
+    @media (min-width: 1158px) {
+      width: 6.4rem;
+      min-width: 6.4rem;
+    }
+  }
+}
+.section-button {
+  display: inline-block;
+}
+
+.t-error {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.08px;
+  color: $alert-red;
+  font-style: italic;
+}
+
+// body bg image
+body {
+  background-repeat: no-repeat;
+  background-image: url(../../images/bg-simplify-section-mobile.svg);
+  background-size: contain;
+  background-position-x: right;
+  background-position-y: top;
+  @media (min-width: 768px) {
+    background: none;
+    position: relative;
+    background-color: $white;
+  }
+}
+
+.bg-pattern-right {
+  display: none;
+  opacity: 0;
+  @media (min-width: 768px) {
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    display: block;
+  }
+}
+.bg-pattern-left {
+  opacity: 0;
+  display: none;
+  @media (min-width: 768px) {
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    top: 112.3rem;
+    z-index: -1;
+    display: block;
+  }
+}
+
+// Forms
+.subscribe-form {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+
+  &__input-group {
+    position: relative;
+    display: flex;
+    margin-right: 0.8rem;
+    width: 100%;
+    p.error {
+      position: absolute;
+      bottom: -1.9rem;
+      opacity: 1;
+      left: 2.4rem;
+      transition: $transition opacity, $transition bottom;
+      @media (min-width: 768px) {
+        left: 1.6rem;
+      }
+    }
+    p.error.hide {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+
+  &__input-field {
+    border: 1px solid transparent;
+    outline: none;
+    border-radius: 2.2rem;
+    padding: 1.2rem;
+    padding-left: 2.4rem;
+    width: 100%;
+    // input field font setting
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    letter-spacing: 0.2px;
+    font-weight: $weight-regular;
+    color: #8d8d8d;
+    transition: $transition border-color, $transition color;
+    @media (min-width: 768px) {
+      padding-left: 1.6rem;
+    }
+  }
+
+  &__input-field.error {
+    border-color: $alert-red;
+    color: $alert-red;
+  }
+
+  ::placeholder {
+    // input field placeholder font setting
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    letter-spacing: 0.2px;
+    font-weight: $weight-regular;
+    color: #8d8d8d;
+  }
 }

@@ -1,3 +1,7 @@
+## Visit Site
+
+https://dj51234.github.io/manage-website/
+
 # Front-end Style Guide
 
 ## Layout
@@ -39,3 +43,5 @@ For the social icons, you can use the icons provided or a font icon library. Som
 - [Font Awesome](https://fontawesome.com)
 - [IcoMoon](https://icomoon.io)
 - [Ionicons](https://ionicons.com)
+
+[!desktop-preview](./design/desktop-design.jpg "Desktop Preview")

@@ -44,4 +44,4 @@ For the social icons, you can use the icons provided or a font icon library. Som
 - [IcoMoon](https://icomoon.io)
 - [Ionicons](https://ionicons.com)
 
-[!desktop-preview](./design/desktop-design.jpg "Desktop Preview")
+![desktop-preview](./design/desktop-design.jpg "Desktop Preview")
